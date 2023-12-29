@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  motioncanvas:
+    build:
+      context: ./docker/
+#     dockerfile: Dockerfile.flowise
+    image: motioncanvas
+    network_mode: "host"
+    container_name: mc
+    restart: always
+    environment:
+#     - LOG_LEVEL=${LOG_LEVEL}
+      - LOG_PATH=${LOG_PATH}
+#     - EXECUTION_MODE=${EXECUTION_MODE}
+#   ports:
+#     - '${PORT}:${PORT}'
+    ports:
+      - 9000:9000
+    volumes:
+      - ./ffmpeg:/work
+    command: sleep infinity
+#   command: npm run serve
+
+#   command: /bin/sh -c "sleep 3; flowise start"
+#    # nur wirksam auf ionos2 mit traefik:
+

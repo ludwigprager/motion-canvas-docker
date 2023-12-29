@@ -1,0 +1,15 @@
+docker run -ti  -v $(pwd):/work -w /work node:20.8.0 /bin/bash
+
+docker run -ti  -p 9000:9000 -v $(pwd):/work -w /work node:21.5.0 /bin/bash
+docker run -ti  --net=host -v $(pwd):/work -w /work node:21.5.0 /bin/bash
+
+npm init @motion-canvas@latest
+cd <project-path>
+npm install
+npm run serve
+
+---
+
+# https://github.com/kubernetes/community/tree/master/icons
+https://upload.wikimedia.org/wikipedia/commons/5/51/DNS_logo.png
+
