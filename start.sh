@@ -9,3 +9,8 @@ docker compose up -d --build
 
 #docker exec -ti mc npm install
 #docker exec -ti mc npm run serve
+
+PROJECT=$1
+
+./exec.sh $PROJECT npm install
+./exec.sh $PROJECT npm run serve

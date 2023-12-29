@@ -15,7 +15,7 @@ services:
     volumes:
       - ./projects/:/projects/
     command: sleep infinity
-    working_dir: /projects/p1
+    working_dir: /projects/
 
 #   command: npm run serve
 

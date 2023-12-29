@@ -6,4 +6,8 @@ cd ${BASEDIR}
 
 #docker compose up -d --build
 #./print-console-links.sh
-docker exec -ti --workdir=/projects/ mc /bin/bash
+
+PROJECT=$1
+shift
+
+docker exec -ti --workdir=/projects/$PROJECT/ mc $*
