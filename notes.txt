@@ -13,3 +13,7 @@ npm run serve
 # https://github.com/kubernetes/community/tree/master/icons
 https://upload.wikimedia.org/wikipedia/commons/5/51/DNS_logo.png
 
+---
+
+
+npm init @motion-canvas@v3.11.0

@@ -10,8 +10,10 @@ FROM node:20.8.0
 
 RUN apt-get update && apt-get install -y \
     ffmpeg \
+    rsync \
+    vim \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /work
+WORKDIR /projets/
 
 #CMD "flowise"

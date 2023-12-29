@@ -7,6 +7,5 @@ cd ${BASEDIR}
 docker compose up -d --build
 #./print-console-links.sh
 
-docker exec -ti mc npm install
-docker exec -ti mc npm run serve
-
+#docker exec -ti mc npm install
+#docker exec -ti mc npm run serve

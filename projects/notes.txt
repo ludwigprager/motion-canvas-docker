@@ -1,0 +1,7 @@
+
+npm init @motion-canvas@v3.11.0
+cd <project-path>
+npm install
+npm run serve
+
+---
