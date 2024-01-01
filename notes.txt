@@ -17,3 +17,24 @@ https://upload.wikimedia.org/wikipedia/commons/5/51/DNS_logo.png
 
 
 npm init @motion-canvas@v3.11.0
+https://www.svgrepo.com/svg/331370/docker
+https://www.svgrepo.com/svg/473581/debian
+https://www.svgrepo.com/svg/448233/kubernetes
+https://www.svgrepo.com/svg/448223/gcp
+https://www.svgrepo.com/svg/448231/helm
+https://www.svgrepo.com/svg/448226/gitlab
+https://www.svgrepo.com/svg/448225/github
+https://www.svgrepo.com/svg/448225/github
+https://www.svgrepo.com/svg/331444/ionos
+https://www.svgrepo.com/svg/508897/bash02
+https://www.svgrepo.com/svg/508764/android
+
+https://www.svgrepo.com/svg/448274/azure
+https://www.svgrepo.com/vectors/android/
+https://www.svgrepo.com/svg/508764/android
+https://www.svgrepo.com/svg/445953/pipeline
+https://www.svgrepo.com/svg/532461/vault
+https://www.svgrepo.com/svg/521329/yaml-16
+https://www.svgrepo.com/svg/458759/json
+
+
