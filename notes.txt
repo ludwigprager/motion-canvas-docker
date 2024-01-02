@@ -41,3 +41,5 @@ https://www.svgrepo.com/svg/458759/json
 ---
 
 git remote add gitea http://lyra.g1:3000/lprager/motion-canvas-docker.git
+
+https://github.com/motion-canvas/examples
