@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "timeEvents": [
+    {
+      "name": "circle",
+      "targetTime": 8.073256308489842
+    },
+    {
+      "name": "square",
+      "targetTime": 11.793603102039725
+    },
+    {
+      "name": "end",
+      "targetTime": 15.005855442883156
+    }
+  ],
+  "seed": 2790679967
+}

@@ -43,3 +43,9 @@ https://www.svgrepo.com/svg/458759/json
 git remote add gitea http://lyra.g1:3000/lprager/motion-canvas-docker.git
 
 https://github.com/motion-canvas/examples
+
+---
+
+wget https://k3d.io/v5.4.6/static/img/k3d_logo_black_blue.svg
+inkscape -w 300  k3d_logo_black_blue.svg  -o k3d.png
+

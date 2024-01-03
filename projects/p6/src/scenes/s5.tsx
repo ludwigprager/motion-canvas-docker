@@ -1,4 +1,4 @@
-import {makeScene2D} from '@motion-canvas/2d';
+import {makeScene2D, Img} from '@motion-canvas/2d';
 import {waitUntil} from '@motion-canvas/core/lib/flow';
 import {Layout, Rect, Txt} from '@motion-canvas/2d/lib/components';
 import {createRef, makeRef, useScene} from '@motion-canvas/core/lib/utils';
@@ -6,12 +6,21 @@ import {map} from '@motion-canvas/core/lib/tweening';
 import {createSignal} from '@motion-canvas/core/lib/signals';
 import {Direction, Spacing} from '@motion-canvas/core/lib/types';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
+import blokadaPng from '../../images/blokada.png';
+import piholePng from '../../images/pihole.png';
+import k3dPng from '../../images/k3d.png';
 
 export default makeScene2D(function* (view) {
+
   const label = createRef<Txt>();
   const size = createSignal(1);
   const rects: Rect[] = [];
   const animate = (from: number, to: number) => () => map(from, to, size());
+
+  const ref = createRef<Img>();
+
+
+
 
   view.add(
     <>
@@ -25,7 +34,13 @@ export default makeScene2D(function* (view) {
       >
         <Layout grow={1} gap={28}>
           <Rect ref={makeRef(rects, 0)} grow={animate(3, 1)} />
-          <Rect ref={makeRef(rects, 1)} grow={1} />
+ <Rect ref={makeRef(rects, 1)} grow={1} />
+
+<Img src={blokadaPng} />
+<Img src={piholePng} />
+<Img src={k3dPng} 
+/>
+
           <Rect ref={makeRef(rects, 2)} grow={1} />
         </Layout>
         <Layout grow={animate(1, 2)} gap={28}>
@@ -55,7 +70,7 @@ export default makeScene2D(function* (view) {
     rect.radius(new Spacing(8));
   }
 
-  yield* slideTransition(Direction.Bottom, 1);
+//yield* slideTransition(Direction.Bottom, 1);
 
   yield label().text('LAYOUTS', 2);
   yield size(0, 2).to(1, 2);
