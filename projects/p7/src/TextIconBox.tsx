@@ -6,6 +6,7 @@ import {
   colorSignal,
   initial,
   signal,
+Layout, Txt, Img
 } from '@motion-canvas/2d';
 import {
   Color,
@@ -20,15 +21,29 @@ import {
   tween,
 } from '@motion-canvas/core';
 
-export interface SwitchProps extends NodeProps {
+import { useLogger } from '@motion-canvas/core/lib/utils';
+
+//import blokadaPng from '../../images/blokada.png';
+
+export interface TextIconBoxProps extends NodeProps {
   initialState?: SignalValue<boolean>;
+  theLabel?: SignalValue<string>;
+  theSrc?: SignalValue<string>;
   accent?: SignalValue<PossibleColor>;
 }
 
-export class Switch extends Node {
+export class TextIconBox extends Node {
   @initial(false)
   @signal()
   public declare readonly initialState: SimpleSignal<boolean, this>;
+
+  @initial('NO LABEL GIVEN')
+  @signal()
+  public declare readonly theLabel: SimpleSignal<string, this>;
+
+  @initial(null)
+  @signal()
+  public declare readonly theSrc: SimpleSignal<string, this>;
 
   @initial('#68ABDF')
   @colorSignal()
@@ -40,15 +55,52 @@ export class Switch extends Node {
   private readonly indicator = createRef<Circle>();
   private readonly container = createRef<Rect>();
 
-  public constructor(props?: SwitchProps) {
+  public constructor(props?: TextIconBoxProps) {
     super({
       ...props,
     });
 
     this.isOn = this.initialState();
     this.indicatorPosition(this.isOn ? 50 : -50);
+  const logger = useLogger();
+logger.info('label: ' + this.theLabel());
+logger.info('src: ' + this.theSrc());
 
     this.add(
+ <Layout layout gap={20} alignItems={'center'}>
+      <Rect fill={'#f3303f'} padding={20} gap={20}>
+        <Txt fill={'white'}>{this.theLabel()}</Txt>
+        <Circle size={60} fill={'#FFC66D'} />
+        <Txt fill={'white'}>!!!</Txt>
+      </Rect>
+ <Img
+      src={this.theSrc()}
+      height={100}
+      radius={20}
+    />
+
+      <Txt fill={'white'}>Example</Txt>
+      <Rect
+        ref={this.container}
+        fill={this.isOn ? this.accent() : this.offColor}
+        size={[200, 100]}
+        radius={100}
+      >
+      </Rect>,
+    </Layout>
+    );
+
+/*
+    this.add(
+ <Layout layout gap={20} alignItems={'center'}>
+      <Txt fill={'white'}>Example</Txt>
+      <Rect fill={'#f3303f'} padding={20} gap={20}>
+        <Txt fill={'white'}>{this.theLabel()}</Txt>
+        <Circle size={60} fill={'#FFC66D'} />
+        <Txt fill={'white'}>!!!</Txt>
+      </Rect>
+ <Layout layout gap={20} alignItems={'center'}>
+      <Txt fill={'white'}>Example</Txt>
       <Rect
         ref={this.container}
         fill={this.isOn ? this.accent() : this.offColor}
@@ -62,7 +114,11 @@ export class Switch extends Node {
           fill="#ffffff"
         />
       </Rect>,
+    </Layout>
+    </Layout>
     );
+*/
+
   }
 
   public *toggle(duration: number) {

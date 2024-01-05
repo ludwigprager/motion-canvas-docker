@@ -6,7 +6,7 @@ import {map} from '@motion-canvas/core/lib/tweening';
 import {createSignal} from '@motion-canvas/core/lib/signals';
 import {Direction, Spacing} from '@motion-canvas/core/lib/types';
 import {slideTransition} from '@motion-canvas/core/lib/transitions';
-import {Switch} from '../Switch';
+import {TextIconBox} from '../TextIconBox';
 
 export default makeScene2D(function* (view) {
   const label = createRef<Txt>();
@@ -17,15 +17,11 @@ export default makeScene2D(function* (view) {
   view.add(
     <>
 
- <Layout layout gap={20} alignItems={'center'}>
-      <Txt fill={'white'}>Example</Txt>
-      <Rect fill={'#f3303f'} padding={20} gap={20}>
-        <Txt fill={'white'}>fjeslfjklf42</Txt>
-        <Circle size={60} fill={'#FFC66D'} />
-        <Txt fill={'white'}>!!!</Txt>
-      </Rect>
-<Switch initialState={true} />
-    </Layout>
+<TextIconBox 
+  initialState={true}
+  theLabel={'DNS'}
+  theSrc={"https://images.unsplash.com/photo-1679218407381-a6f1660d60e9"}
+/>
 
 
     </>,
