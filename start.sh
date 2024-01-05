@@ -7,6 +7,8 @@ function usage () {
   echo $0 "<project>"
 }
 
+./stop.sh
+
 docker compose up -d --build
 #./print-console-links.sh
 #docker exec -ti mc npm install

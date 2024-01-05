@@ -3,15 +3,15 @@
   "timeEvents": [
     {
       "name": "circle",
-      "targetTime": 8.073256308489842
+      "targetTime": 2.104775299426528
     },
     {
       "name": "square",
-      "targetTime": 11.793603102039725
+      "targetTime": 5.825122092976411
     },
     {
       "name": "end",
-      "targetTime": 15.005855442883156
+      "targetTime": 9.037374433819842
     }
   ],
   "seed": 2790679967

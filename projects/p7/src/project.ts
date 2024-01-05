@@ -1,9 +1,10 @@
 import {makeProject} from '@motion-canvas/core';
 
-import signals from './scenes/signals?scene';
-import audio from '../audio/voice.mp3';
+import layouts from './scenes/layouts?scene';
+import s1 from './scenes/s1?scene';
+import l2 from './scenes/l2?scene';
+
 
 export default makeProject({
-  scenes: [signals],
-  audio: audio,
+  scenes: [l2,s1,layouts],
 });
