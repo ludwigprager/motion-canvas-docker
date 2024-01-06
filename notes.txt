@@ -49,3 +49,5 @@ https://github.com/motion-canvas/examples
 wget https://k3d.io/v5.4.6/static/img/k3d_logo_black_blue.svg
 inkscape -w 300  k3d_logo_black_blue.svg  -o k3d.png
 
+
+https://uxwing.com/tag/line-icons/

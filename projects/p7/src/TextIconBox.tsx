@@ -1,29 +1,25 @@
 import {
-  Circle,
-  Node,
-  NodeProps,
-  Rect,
+  Node, NodeProps,
   colorSignal,
-  initial,
-  signal,
-Layout, Txt, Img
+  initial, signal,
+  Circle, Rect,
+  Layout, Txt, Img
 } from '@motion-canvas/2d';
+
 import {
-  Color,
-  ColorSignal,
+  Color, ColorSignal,
   PossibleColor,
   SignalValue,
   SimpleSignal,
-  all,
-  createRef,
   createSignal,
+  createRef,
+  all,
   easeInOutCubic,
   tween,
 } from '@motion-canvas/core';
 
 import { useLogger } from '@motion-canvas/core/lib/utils';
 
-//import blokadaPng from '../../images/blokada.png';
 
 export interface TextIconBoxProps extends NodeProps {
   initialState?: SignalValue<boolean>;
@@ -70,8 +66,6 @@ logger.info('src: ' + this.theSrc());
  <Layout layout gap={20} alignItems={'center'}>
       <Rect fill={'#f3303f'} padding={20} gap={20}>
         <Txt fill={'white'}>{this.theLabel()}</Txt>
-        <Circle size={60} fill={'#FFC66D'} />
-        <Txt fill={'white'}>!!!</Txt>
       </Rect>
  <Img
       src={this.theSrc()}
@@ -79,14 +73,6 @@ logger.info('src: ' + this.theSrc());
       radius={20}
     />
 
-      <Txt fill={'white'}>Example</Txt>
-      <Rect
-        ref={this.container}
-        fill={this.isOn ? this.accent() : this.offColor}
-        size={[200, 100]}
-        radius={100}
-      >
-      </Rect>,
     </Layout>
     );
 

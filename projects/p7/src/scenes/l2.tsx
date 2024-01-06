@@ -24,8 +24,36 @@ export default makeScene2D(function* (view) {
 />
 
 
+<TextIconBox 
+  position={[0, 100]}
+  initialState={true}
+  theLabel={'K8S'}
+  theSrc={"https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/128px-Kubernetes_logo_without_workmark.svg.png"}
+/>
+
+<TextIconBox 
+  position={[300, 100]}
+  initialState={true}
+  theLabel={'k3d'}
+  theSrc={"http://l02.g1/blokada.png"}
+/>
+
+
     </>,
   );
+
+/*
+
+  theSrc={"http://l02.g1/blokada2.png"}
+  theSrc={"https://images.unsplash.com/photo-1679218407381-a6f1660d60e9"}
+  theSrc={"http://nginx/blokada.png"}
+  theSrc={"http://l02.g1/blokada.png"}
+  theSrc={"http://nginx/blokada2.png"}
+  theSrc={"https://blokada.org/img/blokada-thumb.png"}
+  theSrc={"http://wiki.g1/lib/tpl/dokuwiki/images/logo.png"}
+
+*/
+
 
   for (let i = 0; i < rects.length; i++) {
     const rect = rects[i];
