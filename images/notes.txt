@@ -1,2 +1,13 @@
-https://blokada.org/img/brand/blue.png
-https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png
+# https://blokada.org/img/brand/blue.png
+# https://upload.wikimedia.org/wikipedia/commons/0/00/Pi-hole_Logo.png
+
+# dns
+# https://visualpharm.com/assets/791/Dns-595b40b85ba036ed117dcf88.svg
+
+inkscape -w 300  Dns-595b40b85ba036ed117dcf88.svg  -o dns.png
+
+
+# http://simpleicon.com/wp-content/uploads/pc.svg
+inkscape -w 300  pc.svg  -o pc.png
+
+# https://d22e4d61ky6061.cloudfront.net/sites/default/files/DHCP_1.png

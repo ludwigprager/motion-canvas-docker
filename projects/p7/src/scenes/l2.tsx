@@ -18,9 +18,10 @@ export default makeScene2D(function* (view) {
     <>
 
 <TextIconBox 
+  position={[50, -50]}
   initialState={true}
   theLabel={'DNS'}
-  theSrc={"https://images.unsplash.com/photo-1679218407381-a6f1660d60e9"}
+  theSrc={"http://l02.g1/dns.png"}
 />
 
 
@@ -36,6 +37,13 @@ export default makeScene2D(function* (view) {
   initialState={true}
   theLabel={'k3d'}
   theSrc={"http://l02.g1/blokada.png"}
+/>
+
+<TextIconBox 
+  position={[300, 500]}
+  initialState={true}
+  theLabel={'PC'}
+  theSrc={"http://l02.g1/pc.png"}
 />
 
 

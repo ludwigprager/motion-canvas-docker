@@ -58,22 +58,27 @@ export class TextIconBox extends Node {
 
     this.isOn = this.initialState();
     this.indicatorPosition(this.isOn ? 50 : -50);
-  const logger = useLogger();
-logger.info('label: ' + this.theLabel());
-logger.info('src: ' + this.theSrc());
+
+    const logger = useLogger();
+
+    logger.info('label: ' + this.theLabel());
+    logger.info('src: ' + this.theSrc());
 
     this.add(
- <Layout layout gap={20} alignItems={'center'}>
-      <Rect fill={'#f3303f'} padding={20} gap={20}>
-        <Txt fill={'white'}>{this.theLabel()}</Txt>
-      </Rect>
- <Img
-      src={this.theSrc()}
-      height={100}
-      radius={20}
-    />
-
-    </Layout>
+      <Layout layout gap={20} alignItems={'center'}>
+        <Rect fill={'white'} 
+              padding={20} 
+              gap={20}
+              alignItems={'center'}
+        >
+        <Img
+          src={this.theSrc()}
+          height={150}
+          radius={20}
+        />
+          <Txt fill={'black'}>{this.theLabel()}</Txt>
+        </Rect>
+      </Layout>
     );
 
 /*
