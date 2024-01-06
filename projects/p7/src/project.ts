@@ -6,5 +6,5 @@ import l2 from './scenes/l2?scene';
 
 
 export default makeProject({
-  scenes: [l2,s1,layouts],
+  scenes: [s1,l2],
 });

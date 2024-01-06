@@ -11,3 +11,6 @@ inkscape -w 300  Dns-595b40b85ba036ed117dcf88.svg  -o dns.png
 inkscape -w 300  pc.svg  -o pc.png
 
 # https://d22e4d61ky6061.cloudfront.net/sites/default/files/DHCP_1.png
+
+# https://de.wikipedia.org/wiki/Datei:Facebook_Logo_%282019%29.png
+
