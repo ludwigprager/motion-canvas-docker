@@ -9,20 +9,21 @@ import {slideTransition} from '@motion-canvas/core/lib/transitions';
 import {TextIconBox} from '../TextIconBox';
 import { useLogger } from '@motion-canvas/core/lib/utils';
 //import {all, chain, delay, loop, waitUntil} from '@motion-canvas/core/lib/flow';
-import {all} from '@motion-canvas/core/lib/flow';
+import {all, chain, waitFor} from '@motion-canvas/core/lib/flow';
 
 
 
 export default makeScene2D(function* (view) {
-  const label = createRef<Txt>();
   const size = createSignal(1);
   const rects: Rect[] = [];
   const animate = (from: number, to: number) => () => map(from, to, size());
 
   const line1 = createRef<Line>();
+  const line3 = createRef<Line>();
   const dns = createRef<TextIconBox>();
   const pc = createRef<TextIconBox>();
   const facebook = createRef<TextIconBox>();
+  const text1 = createRef<Txt>();
 
 
 
@@ -48,10 +49,7 @@ export default makeScene2D(function* (view) {
 
       <Line
         ref={line1}
-        points={[
-          [pc().position().x, pc().position().y],
-          [dns().position().x, dns().position().y],
-        ]}
+        points={[ pc().position(), dns().position() ]}
         stroke={'black'}
         lineWidth={8}
         radius={40}
@@ -63,12 +61,13 @@ export default makeScene2D(function* (view) {
         endOffset={100}
 
         // A percentage from the start before which the curve should be clipped.
-        // start={90}
+        start={.1}
         // A percentage from the start after which the curve should be clipped.
-        end={0}
+        end={.1}
 
         lineDash={[20, 20]}
       />,
+
 
       <TextIconBox 
         ref={facebook}
@@ -76,35 +75,101 @@ export default makeScene2D(function* (view) {
         initialState={true}
         theLabel={'facebook'}
         theSrc={"http://l03.g1/facebook.png"}
+      />,
+
+      <Txt
+        ref={text1}
+        position={[
+          (dns().position().x + pc().position().x)/2,
+          (dns().position().y + pc().position().y)/2,
+        ]}
       />
+
+      <Line
+        ref={line3}
+        points={[ dns().position(), facebook().position() ]}
+        stroke={'black'}
+        lineWidth={8}
+        radius={40}
+        endArrow
+        startOffset={100}
+        endOffset={100}
+        start={.1}
+        end={.1}
+        lineDash={[20, 20]}
+      />,
+
 
 
     </>,
   );
 
-    const logger = useLogger();
-    logger.info('dns x: ' + dns().x());
-    logger.info('dns y: ' + dns().y());
+//  const logger = useLogger();
+
+// Pfeil von pc -> dns
+yield * chain(
+    line1().points([pc().position(), dns().position()], 0),
+    line1().end(.9, 2),
+    text1().text('URL', .5)
+);
+
+yield* waitFor(5);
+
+// Pfeil von dns -> pc
+// 1. reset
+yield * chain(
+    text1().text('', 0),
+    line1().points([dns().position(), pc().position()], 0),
+    line1().start(.1,0),
+    line1().end(.1,0),
+);
+
+yield * chain(
+    line1().end(.1, 0),
+    line1().end(.9, 2),
+    text1().text('IP-Adresse', .5),
+);
+
+yield* waitFor(3);
+
+// Pfeil von pc -> facebook
+yield * chain(
+    text1().text('', 0),
+    line1().points([pc().position(), facebook().position()], 0),
+    line3().start(.1,2),
+    line3().end(.1,2),
+    line3().end(.1, 2),
+    line3().end(.9, 5),
+);
+
+//logger.info('line1: ' + JSON.stringify(line1()));
 
 /*
-
-  theSrc={"http://l03.g1/blokada2.png"}
-  theSrc={"https://images.unsplash.com/photo-1679218407381-a6f1660d60e9"}
-  theSrc={"http://nginx/blokada.png"}
-  theSrc={"http://l02.g1/blokada.png"}
-  theSrc={"http://nginx/blokada2.png"}
-  theSrc={"https://blokada.org/img/blokada-thumb.png"}
-  theSrc={"http://wiki.g1/lib/tpl/dokuwiki/images/logo.png"}
-
-
+    line1().startArrow(true, 1),
+    line1().arrowSize(true, 1),
+    line1().opacity(0, 1),
 */
 
-yield *
-  all(
-    line1().start(50, 20)
-  );
+//line1().startOffset = 100.0;
+//line1().endArrow = true;
+//line1().startArrow = false;
+/*
+yield * all(
+    line1().opacity(0, 2),
+);
+yield * all(
+    line1().opacity(1, 2),
+);
+*/
 
-//  line1().endArrow = false;
+/*
+yield * chain(
+    line1().opacity(0, 1),
+    line1().endArrow(false, 0),
+    line1().startArrow(true, 0),
+    line1().end(.1, 5),
+);
+*/
 //  line1().startArrow(false,1)
 
 /*
@@ -126,12 +191,10 @@ yield *
 
   yield* slideTransition(Direction.Bottom, 1);
 
-//yield label().text('LAYOUTS', 2);
   yield size(0, 2).to(1, 6);
 
   yield* waitUntil('next');
   useScene().enterCanTransitionOut();
-//yield* label().position.y(-320, 1);
 
 */
 });
