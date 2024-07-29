@@ -78,6 +78,8 @@ export default makeScene2D(function* (view) {
       />,
 
       <Txt
+        fill={'blue'}
+        size={20}
         ref={text1}
         position={[
           (dns().position().x + pc().position().x)/2,
@@ -110,7 +112,7 @@ export default makeScene2D(function* (view) {
 yield * chain(
     line1().points([pc().position(), dns().position()], 0),
     line1().end(.9, 2),
-    text1().text('URL', .5)
+    text1().text('domain', .5)
 );
 
 yield* waitFor(5);
@@ -127,7 +129,7 @@ yield * chain(
 yield * chain(
     line1().end(.1, 0),
     line1().end(.9, 2),
-    text1().text('IP-Adresse', .5),
+    text1().text('IP address', .5),
 );
 
 yield* waitFor(3);
