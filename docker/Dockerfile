@@ -1,4 +1,4 @@
-FROM node:20.8.0
+FROM node:20.18.0
 
 #USER root
 

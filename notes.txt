@@ -51,3 +51,9 @@ inkscape -w 300  k3d_logo_black_blue.svg  -o k3d.png
 
 
 https://uxwing.com/tag/line-icons/
+
+
+---
+
+docker run -ti  --network=host -p 9000:9000 -v $(pwd)/projekt-neu:/projects/ motioncanvas bash
+
