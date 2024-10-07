@@ -57,3 +57,7 @@ https://uxwing.com/tag/line-icons/
 
 docker run -ti  --network=host -p 9000:9000 -v $(pwd)/projekt-neu:/projects/ motioncanvas bash
 
+git clone git@git.g1:motion-canvas-docker.git 
+
+run motion-canvas in a zero-footprint docker environment
+
