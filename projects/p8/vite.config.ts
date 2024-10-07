@@ -7,18 +7,4 @@ export default defineConfig({
     motionCanvas(),
     ffmpeg(),
   ],
-
-
- server: {
-        host: '0.0.0.0',
-        port: 9000,
-        hmr: {
-            port: 9000,
-            clientPort: 9000,
-            host: 'localhost'
-        }
-    }
-
-
-
 });
